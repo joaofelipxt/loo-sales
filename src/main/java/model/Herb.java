@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Herb extends Vegetable {
 	
-	public Herb(String name, long id, double weight) {
-		super(name, id , weight);
+	public Herb(String name, long id, double weight, VegetableType type) {
+		super(name, id , weight, type);
 	}
 
 	@Override

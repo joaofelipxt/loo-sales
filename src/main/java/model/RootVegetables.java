@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class RootVegetables extends Vegetable {
 	
-	public RootVegetables(String name, long id, double weight) {
-		super(name, id, weight);
+	public RootVegetables(String name, long id, double weight, VegetableType type) {
+		super(name, id, weight, type);
 		
 	}
 

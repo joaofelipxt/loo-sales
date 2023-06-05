@@ -6,8 +6,8 @@ public class Fruit extends Vegetable {
 	private String nutriInfo;
 
 	
-	public Fruit(String name, long id, double weight) {
-		super(name, id, weight);
+	public Fruit(String name, long id, double weight, VegetableType type) {
+		super(name, id, weight, type);
 	}
 	@Override
 	public Date getExpirationDate() {

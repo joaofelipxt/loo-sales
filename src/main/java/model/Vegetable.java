@@ -8,11 +8,13 @@ public abstract class Vegetable implements Product {
 	private double weight;
 	private boolean isAvailable;
 	private double price;
+	private VegetableType type;
 	
-	public Vegetable(String name, long id, double weight) {
+	public Vegetable(String name, long id, double weight, VegetableType type) {
 		this.name = name;
 		this.id = id;
 		this.weight = weight;
+		this.type = type;
 	}
 
 	@Override
@@ -24,6 +26,10 @@ public abstract class Vegetable implements Product {
 	public void setId(long id) {
 		this.id = id;
 		
+	}
+
+	public VegetableType getType() {
+		return type;
 	}
 
 	@Override

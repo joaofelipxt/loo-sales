@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Iterator;
 import java.util.List;
 
 public class Sale {
@@ -13,20 +14,36 @@ public class Sale {
 		this.products = products;
 	}
 	
+	public void sell(int quantidade) throws EstoqueInsuficienteException {
+            // Lógica para venda do produto
+            if (quantidade > 0 && quantidade <= getQuantidadeEmEstoque()) {
+                // Atualizar estoque e outros processamentos necessários
+                // ...
+            } else {
+                throw new EstoqueInsuficienteException("Estoque insuficiente para a venda");
+            }
+        }
+	
+	
 	public double getTotalPrice(int qtd) {
 	    double totalPrice = 0.0;
-	    for (Product product : products) {
-	        totalPrice += product.getPrice() * qtd;
-	    }
+	    Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            totalPrice += product.getPrice() * qtd;
+        }
 	    return totalPrice;
 	}
 	
 	public double getTotalPrice(double weight) {
 	    double totalPrice = 0.0;
-	    for (Product product : products) {
-	        totalPrice += product.getPrice() * weight;
-	    }
+	    Iterator<Product> iterator = products.iterator();
+        while (iterator.hasNext()) {
+            Product product = iterator.next();
+            totalPrice += product.getPrice() * weight;
+        }
 	    return totalPrice;
 	}
-
+	
+	
 }	
