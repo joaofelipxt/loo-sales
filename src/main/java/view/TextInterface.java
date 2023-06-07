@@ -4,9 +4,9 @@ import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.Scanner;
 
+import control.Register;
 import model.Client;
 import model.Product;
-import model.Register;
 
 public class TextInterface {
 	private static final String SAIR = "sair";

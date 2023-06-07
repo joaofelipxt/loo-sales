@@ -9,5 +9,4 @@ public class Main {
 		TextInterface it = new TextInterface();
         it.renderizar();
 	}
-
 }

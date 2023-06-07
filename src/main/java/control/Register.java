@@ -1,8 +1,11 @@
-package model;
+package control;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import exceptions.InsufficientStockException;
+import model.Product;
 
 public class Register {
 	private ArrayList<Product> products;

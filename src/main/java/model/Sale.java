@@ -14,24 +14,18 @@ public class Sale {
 		this.products = products;
 	}
 	
-	public void sell(int quantidade) throws EstoqueInsuficienteException {
-            // Lógica para venda do produto
-            if (quantidade > 0 && quantidade <= getQuantidadeEmEstoque()) {
-                // Atualizar estoque e outros processamentos necessários
-                // ...
-            } else {
-                throw new EstoqueInsuficienteException("Estoque insuficiente para a venda");
-            }
-        }
-	
-	
-	public double getTotalPrice(int qtd) {
+	public double getTotalPrice(int qtd) throws IllegalArgumentException {
+	    if (qtd < 0) {
+	        throw new IllegalArgumentException("Quantidade inválida: " + qtd);
+	    }
+	    
 	    double totalPrice = 0.0;
 	    Iterator<Product> iterator = products.iterator();
-        while (iterator.hasNext()) {
-            Product product = iterator.next();
-            totalPrice += product.getPrice() * qtd;
-        }
+	    while (iterator.hasNext()) {
+	        Product product = iterator.next();
+	        totalPrice += product.getPrice() * qtd;
+	    }
+	    
 	    return totalPrice;
 	}
 	
